@@ -1,29 +1,9 @@
 ---
-// We can use await right away, because we are in an async function (top level)
-const API_URL = 'https://jsonplaceholder.typicode.com/users?_limit=10';
-const response = await fetch(API_URL);
-const users = await response.json();
-
-const name = 'Astro';
-const style = 'purple';
-const isVisible = true;
+import Layout from '../layouts/Layout.astro';
 ---
 
-<>
-  <h1 class={style}>Hello, {name}</h1>
-  <ul>
-    {users.map((user) => <li>{user.name}</li>)}
-  </ul>
+<Layout title='Astro Showcase'>
+  <h1>Hello, Astro!</h1>
+</Layout>
 
-  <p>{isVisible && <p>Visible</p>}</p>
-</>
-
-<style>
-  h1 {
-    color: red;
-  }
-
-  .purple {
-    color: purple;
-  }
-</style>
+<style></style>
